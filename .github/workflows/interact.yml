@@ -1,0 +1,15 @@
+# This file will confirm your configuration is running correctly
+# It will spin up a docker container and interact with the codebase after checking it out
+# !! Please create your own branch to test this out, don't push to main !!
+
+name: Interact with Code Base
+on: workflow_dispatch
+jobs:
+  run-main:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 16
+        - run: node main.js
