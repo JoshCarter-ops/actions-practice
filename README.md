@@ -6,7 +6,7 @@ Here are some initial steps to get started:
 
 **ONLY UBUNTU RUNNERS CAN BE USED - USE THIS FOR TESTING OUT NOT BUILDING!**
 
-1.  Install Docker: [https://docs.docker.com/desktop/install/mac-install/](https://docs.docker.com/desktop/install/mac-install/)
+1.  Install Docker: [Docker Link (macos)](https://docs.docker.com/desktop/install/mac-install/)
     
 2.  Install 'act':
     
