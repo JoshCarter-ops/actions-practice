@@ -29,5 +29,3 @@ jobs:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: ./deployments
             publish_branch: gh-pages
-
-    
