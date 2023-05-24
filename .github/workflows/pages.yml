@@ -14,3 +14,4 @@ jobs:
         - name: Generate HTML for Pages
           run: |
             sed -i'' -e 's/RUN_ID/${{ github.run_id }}/g' page.html
+            cat page.html
