@@ -24,7 +24,7 @@ jobs:
             ls -lah deployments
 
         - name: Add Lastest Run to Listing
-          run: echo 'https://joshcarter-ops.github.io/actions-practice/${{github.run_id}}/page.html' >> index.html
+          run: echo 'https://joshcarter-ops.github.io/actions-practice/${{github.run_id}}/page.html' >> deployments/index.html
         
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
