@@ -1,0 +1,13 @@
+name: Publish to GitHub Pages
+on: workflow_dispatch
+permissions:
+    id-token: write
+    contents: read
+
+jobs:
+  deploy-gh-actions:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Generate HTML for Pages
+          run: |
+            sed -i'' -e 's/RUN_ID/${{ github.run_id }}/g' .env
