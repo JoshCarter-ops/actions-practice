@@ -22,6 +22,9 @@ jobs:
             mkdir -p deployments/${{ github.run_id }}
             cp page.html deployments/${{ github.run_id }}/
             ls -lah deployments
+
+        - name: Add Lastest Run to Listing
+          run: echo 'https://joshcarter-ops.github.io/actions-practice/${{github.run_id}}/page.html' >> index.html
         
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
