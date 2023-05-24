@@ -2,10 +2,11 @@ name: Publish to GitHub Pages
 on: workflow_dispatch
 permissions:
     id-token: write
-    contents: read
+    contents: write
 
 jobs:
-  deploy-gh-actions:
+  generate-html:
+    name: Generate HTML and Directories
     runs-on: ubuntu-latest
     steps:
         - name: Get Code
@@ -18,6 +19,15 @@ jobs:
         
         - name: Copy into Deployments Dir
           run: |
-            mkdir -p deploy/${{ github.run_id }}
-            cp page.html deploy/${{ github.run_id }}/
+            mkdir -p deployments/${{ github.run_id }}
+            cp page.html deployments/${{ github.run_id }}/
             ls -lah deploy
+        
+        - name: Deploy
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./deployments
+            publish_branch: gh-pages
+
+    
