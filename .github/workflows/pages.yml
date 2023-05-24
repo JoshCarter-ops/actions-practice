@@ -10,4 +10,4 @@ jobs:
     steps:
         - name: Generate HTML for Pages
           run: |
-            sed -i'' -e 's/RUN_ID/${{ github.run_id }}/g' .env
+            sed -i'' -e 's/RUN_ID/${{ github.run_id }}/g' page.html
