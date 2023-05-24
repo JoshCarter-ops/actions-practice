@@ -15,3 +15,9 @@ jobs:
           run: |
             sed -i'' -e 's/RUN_ID/${{ github.run_id }}/g' page.html
             cat page.html
+        
+        - name: Copy into Deployments Dir
+          run: |
+            mkdir -p deploy/${{ github.run_id }}
+            cp page.html deploy/${{ github.run_id }}/
+            ls -lah deploy
