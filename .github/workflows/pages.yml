@@ -21,7 +21,7 @@ jobs:
           run: |
             mkdir -p deployments/${{ github.run_id }}
             cp page.html deployments/${{ github.run_id }}/
-            ls -lah deploy
+            ls -lah deployments
         
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
