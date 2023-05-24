@@ -8,6 +8,9 @@ jobs:
   deploy-gh-actions:
     runs-on: ubuntu-latest
     steps:
+        - name: Get Code
+          uses: actions/checkout@v3
+        
         - name: Generate HTML for Pages
           run: |
             sed -i'' -e 's/RUN_ID/${{ github.run_id }}/g' page.html
