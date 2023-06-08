@@ -7,20 +7,23 @@ jobs:
   mobile-develop-job:
     runs-on: ubuntu-latest
     name: Build Develop Artifact
+    uses: JoshCarter-ops/reusable/.github/workflows/build-mobile.yml@main
+    with:
+      branch_name: main
+      environment: develop
+      node_version: '16'
+    secrets:
+      AWS_ROLE: "DEFAULTING"
+      ARTIFACT_S3: "DEFAULTING"
+      KEYCHAIN_PASSWORD: "DEFAULTING"
+      APPLE_DEVELOPER_TEAM: "DEFAULTING"
+      APPLE_DEVELOPER_EMAIL: "DEFAULTING"
+      APPLE_DEVELOPER_PASSWORD: "DEFAULTING"
+    
     steps:
-      - uses: JoshCarter-ops/reusable/.github/workflows/build-mobile.yml@main
-        with:
-          branch_name: main
-          environment: develop
-          node_version: '16'
-        secrets:
-          AWS_ROLE: "DEFAULTING"
-          ARTIFACT_S3: "DEFAULTING"
-          KEYCHAIN_PASSWORD: "DEFAULTING"
-          APPLE_DEVELOPER_TEAM: "DEFAULTING"
-          APPLE_DEVELOPER_EMAIL: "DEFAULTING"
-          APPLE_DEVELOPER_PASSWORD: "DEFAULTING"
-  
+      - name: Call Reusable Workflow
+        uses: JoshCarter-ops/reusable/.github/workflows/build-mobile.yml@main
+        
   # mobile-integration-job:
   #   runs-on: ubuntu-latest
   #   name: Build Integration Artifact
