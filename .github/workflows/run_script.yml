@@ -7,3 +7,11 @@ jobs:
           - uses: actions/checkout@v3
           - name: Run Hello script
             run: bash ./.github/scripts/hello.sh
+          - name: Show GITHUB_HEAD_REF
+            run: echo $GITHUB_HEAD_REF
+          - name: Show GITHUB_REF
+            run: echo $GITHUB_REF
+          - name: Show GITHUB_REF_NAME
+            run: echo $GITHUB_REF_NAME
+          - name: Show GITHUB_REF_TYPE
+            run: echo $GITHUB_REF_TYPE
