@@ -9,13 +9,13 @@ jobs:
             run: bash ./.github/scripts/hello.sh
           
           - name: Show GITHUB_HEAD_REF
-            run: echo ${{env.GITHUB_HEAD_REF}}
+            run: echo ${{.github.head_ref }}
           
           - name: Show GITHUB_REF
-            run: echo ${{env.GITHUB_REF}}
+            run: echo ${{ github.ref }}
           
           - name: Show GITHUB_REF_NAME
-            run: echo ${{env.GITHUB_REF_NAME}}
+            run: echo ${{ github.ref_name }}
           
           - name: Show GITHUB_REF_TYPE
-            run: echo ${{env.GITHUB_REF_TYPE}}
+            run: echo ${{ github.ref_type }}
